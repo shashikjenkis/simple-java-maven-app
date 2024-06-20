@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'Slave_node1'}
     tools {
-        maven: 'maven3.9.6' 
+        maven 'maven3.9.6' 
     }
     stages {
         stage('source') {
