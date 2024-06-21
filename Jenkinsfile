@@ -8,6 +8,10 @@ pipeline {
         choice(name: 'Goal', choices: ['compile', 'test', 'package'], description: 'maven golas')
     }
 
+    triggers {
+        pollSCM('H/1 * * * *') // Polls the SCM every 5 minutes
+    }
+
     stages {
         stage('source') {
             steps {
