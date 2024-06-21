@@ -19,7 +19,7 @@ pipeline {
                     branch: 'master'
             }
         }
-        stage('package') {
+        stage('packages') {
             steps {
                  sh "mvn ${params.Goal}"
             }
