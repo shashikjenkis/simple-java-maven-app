@@ -9,7 +9,7 @@ pipeline {
     }
 
     triggers {
-        pollSCM('* * * * *') // Polls the SCM every 5 minutes
+        triggers { cron('* * * * *') }
     }
 
     stages {
