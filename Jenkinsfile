@@ -3,6 +3,11 @@ pipeline {
     tools {
         maven 'maven3.9.6' 
     }
+    
+    parameters {
+        choice(name: 'Goal', choices: ['compile', 'test', 'package'], description: 'maven golas')
+    }
+
     stages {
         stage('source') {
             steps {
@@ -12,7 +17,7 @@ pipeline {
         }
         stage('package') {
             steps {
-                 sh 'mvn package'
+                 sh 'mvn ${params.Goal}'
             }
         }
          stage('archiveArtifacts') {
