@@ -9,9 +9,8 @@ pipeline {
     }
 
     triggers {
-        triggers { cron('* * * * *') }
+        cron('* * * * *')
     }
-
     stages {
         stage('source') {
             steps {
