@@ -17,7 +17,7 @@ pipeline {
         }
         stage('package') {
             steps {
-                 sh 'mvn ${params.Goal}'
+                 sh "mvn ${params.Goal}"
             }
         }
          stage('archiveArtifacts') {
